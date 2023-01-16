@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>DataViz Bakha Mohamed Issam</title>
+  </head>
+  <body>
+    <h2>Requête pour exemplifier la notion de "big data":</h2>
+    <code
+      >SELECT ?film ?filmLabel ?image WHERE { ?film wdt:P31 wd:Q11424. ?film
+      wdt:P18 ?image. SERVICE wikibase:label { bd:serviceParam wikibase:language
+      "[AUTO_LANGUAGE],en". } }
+    </code>
+    <p>
+      Cette requête sélectionne tous les films (wdt:P31 wd:Q11424) et leur image
+      associée (wdt:P18) et permet de les afficher avec leur nom en anglais et
+      dans la langue de l'utilisateur. Cela permet d'obtenir un grand nombre de
+      images de films différents (big data).
+    </p>
+    <iframe
+      style="width: 80vw; height: 50vh; border: none"
+      src="https://query.wikidata.org/embed.html#SELECT%20%3Ffilm%20%3FfilmLabel%20%3Fimage%20WHERE%20%7B%0A%20%20%3Ffilm%20wdt%3AP31%20wd%3AQ11424.%0A%20%20%3Ffilm%20wdt%3AP18%20%3Fimage.%0A%20%20SERVICE%20wikibase%3Alabel%20%7B%20bd%3AserviceParam%20wikibase%3Alanguage%20%22%5BAUTO_LANGUAGE%5D%2Cen%22.%20%7D%0A%7D%20LIMIT%202000%0A"
+      referrerpolicy="origin"
+      sandbox="allow-scripts allow-same-origin allow-popups"
+    ></iframe>
+    <h2>Requête pour exemplifier la notion de "high dimensional data":</h2>
+    <code
+      >SELECT ?film ?filmLabel ?image ?director ?producer ?actor ?writer
+      ?release_date ?budget ?box_office_revenue WHERE { ?film wdt:P31 wd:Q11424.
+      ?film wdt:P18 ?image. ?film wdt:P57 ?director. ?film wdt:P162 ?producer.
+      ?film wdt:P161 ?actor. ?film wdt:P58 ?writer. ?film wdt:P577
+      ?release_date. ?film wdt:P2130 ?budget. ?film wdt:P2142
+      ?box_office_revenue. SERVICE wikibase:label { bd:serviceParam
+      wikibase:language "[AUTO_LANGUAGE],en". } }
+    </code>
+    <p>
+      Cette requête sélectionne les mêmes informations que la précédente, mais
+      ajoute également des propriétés telles que le réalisateur (wdt:P57), le
+      producteur (wdt:P162), l'acteur (wdt:P161), le scénariste (wdt:P58), la
+      date de sortie (wdt:P577), le budget (wdt:P2130), et les recettes du
+      box-office (wdt:P2142) de chaque film. Cela permet d'obtenir une grande
+      quantité d'informations sur chaque film (high dimensional data).
+    </p>
+    <iframe
+      style="width: 80vw; height: 50vh; border: none"
+      src="https://query.wikidata.org/embed.html#SELECT%20%3Ffilm%20%3FfilmLabel%20%3Fimage%20%3Fdirector%20%3Fproducer%20%3Factor%20%3Fwriter%20%3Frelease_date%20%3Fbudget%20%3Fbox_office_revenue%20WHERE%20%7B%0A%20%20%3Ffilm%20wdt%3AP31%20wd%3AQ11424.%0A%20%20%3Ffilm%20wdt%3AP18%20%3Fimage.%0A%20%20%3Ffilm%20wdt%3AP57%20%3Fdirector.%0A%20%20%3Ffilm%20wdt%3AP162%20%3Fproducer.%0A%20%20%3Ffilm%20wdt%3AP161%20%3Factor.%0A%20%20%3Ffilm%20wdt%3AP58%20%3Fwriter.%0A%20%20%3Ffilm%20wdt%3AP577%20%3Frelease_date.%0A%20%20%3Ffilm%20wdt%3AP2130%20%3Fbudget.%0A%20%20%3Ffilm%20wdt%3AP2142%20%3Fbox_office_revenue.%0A%20%20SERVICE%20wikibase%3Alabel%20%7B%20bd%3AserviceParam%20wikibase%3Alanguage%20%22%5BAUTO_LANGUAGE%5D%2Cen%22.%20%7D%0A%7D%20LIMIT%202000%0A"
+      referrerpolicy="origin"
+      sandbox="allow-scripts allow-same-origin allow-popups"
+    ></iframe>
+  </body>
+</html>
