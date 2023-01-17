@@ -1,1 +1,1 @@
-https://issamlynx.github.io/BigDataViz/DatavizBakhaMohamedIssam.html
+https://issamlynx.github.io/BigDataViz/exo01.html
