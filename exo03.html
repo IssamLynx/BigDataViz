@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <script src="https://cdn.jsdelivr.net/npm/vega@5.22.1"></script>
+  <script src="https://cdn.jsdelivr.net/npm/vega-lite@5.2.0"></script>
+  <script src="https://cdn.jsdelivr.net/npm/vega-embed@6.21.0"></script>
+</head>
+<body>
+    <h4><a href="./exo03.html">Aller à la page de l'exercice 03</a></h4>
+
+  <h2> Exercice 03</h2>
+  Les budgets par films
+  <div id="vis">
+  <script>
+    const spec = {
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "description": "A simple bar chart with embedded data.",
+  "data": {
+    "values": [
+      {
+        "film": "http://www.wikidata.org/entity/Q930071",
+        "release_date": "1977-04-29T00:00:00Z",
+        "filmLabel": "Robin and Marian",
+        "image": "http://commons.wikimedia.org/wiki/Special:FilePath/Hepburn%20Connery%20Robin%20and%20Marian%20Still%201976.jpg",
+        "budget": 5000000
+      },
+      {
+        "film": "http://www.wikidata.org/entity/Q168154",
+        "release_date": "1969-08-14T00:00:00Z",
+        "filmLabel": "Once Upon a Time in the West",
+        "image": "http://commons.wikimedia.org/wiki/Special:FilePath/Spiel%20mir%20das%20Lied%20vom%20Tod%20Logo.png",
+        "budget": 5000000
+      },
+      {
+        "film": "http://www.wikidata.org/entity/Q1697043",
+        "release_date": "1948-11-11T00:00:00Z",
+        "filmLabel": "Joan of Arc",
+        "image": "http://commons.wikimedia.org/wiki/Special:FilePath/Coming%20in%201949%20-%20Joan%20of%20Arc%2C%20starring%20Ingrid%20Bergman.jpg",
+        "budget": 4650506
+      },
+      {
+        "film": "http://www.wikidata.org/entity/Q930071",
+        "release_date": "1976-05-27T00:00:00Z",
+        "filmLabel": "Robin and Marian",
+        "image": "http://commons.wikimedia.org/wiki/Special:FilePath/Hepburn%20Connery%20Robin%20and%20Marian%20Still%201976.jpg",
+        "budget": 5000000
+      },
+      {
+        "film": "http://www.wikidata.org/entity/Q26751",
+        "release_date": "2009-12-31T00:00:00Z",
+        "filmLabel": "Moon",
+        "image": "http://commons.wikimedia.org/wiki/Special:FilePath/Moon.svg",
+        "budget": 5000000
+      },
+      {
+        "film": "http://www.wikidata.org/entity/Q156911",
+        "release_date": "1988-05-06T00:00:00Z",
+        "filmLabel": "Wings of Desire",
+        "image": "http://commons.wikimedia.org/wiki/Special:FilePath/Berlin%20Anhalter%20Bahnhof.jpg",
+        "budget": 5000000
+      },
+      {
+        "film": "http://www.wikidata.org/entity/Q1198269",
+        "release_date": "1958-10-11T00:00:00Z",
+        "filmLabel": "The Old Man and the Sea",
+        "image": "http://commons.wikimedia.org/wiki/Special:FilePath/The%20Old%20Man%20and%20the%20Sea%20%281958%20film%29.jpg",
+        "budget": 5000000
+      },
+      {
+        "film": "http://www.wikidata.org/entity/Q959853",
+        "release_date": "1988-01-01T00:00:00Z",
+        "filmLabel": "Halloween 4: The Return of Michael Myers",
+        "image": "http://commons.wikimedia.org/wiki/Special:FilePath/Halloween4bann.jpg",
+        "budget": 5000000
+      },
+      {
+        "film": "http://www.wikidata.org/entity/Q151599",
+        "release_date": "1927-04-04T00:00:00Z",
+        "filmLabel": "Metropolis",
+        "image": "http://commons.wikimedia.org/wiki/Special:FilePath/Maria%20from%20the%20film%20Metropolis%2C%20on%20display%20at%20the%20Robot%20Hall%20of%20Fame.jpg",
+        "budget": 5300000
+      },
+      {
+        "film": "http://www.wikidata.org/entity/Q26751",
+        "release_date": "2009-01-23T00:00:00Z",
+        "filmLabel": "Moon",
+        "image": "http://commons.wikimedia.org/wiki/Special:FilePath/Moon.svg",
+        "budget": 5000000
+      },
+      {
+        "film": "http://www.wikidata.org/entity/Q62665",
+        "release_date": "1973-01-01T00:00:00Z",
+        "filmLabel": "The Sting",
+        "image": "http://commons.wikimedia.org/wiki/Special:FilePath/The%20Sting%20%281973%20alt%20poster%29.jpeg",
+        "budget": 5500000
+      },
+      {
+        "film": "http://www.wikidata.org/entity/Q577306",
+        "release_date": "1978-06-05T00:00:00Z",
+        "filmLabel": "The Gauntlet",
+        "image": "http://commons.wikimedia.org/wiki/Special:FilePath/The%20gauntlet%20de.svg",
+        "budget": 5500000
+      },
+      {
+        "film": "http://www.wikidata.org/entity/Q930071",
+        "release_date": "1977-07-20T00:00:00Z",
+        "filmLabel": "Robin and Marian",
+        "image": "http://commons.wikimedia.org/wiki/Special:FilePath/Hepburn%20Connery%20Robin%20and%20Marian%20Still%201976.jpg",
+        "budget": 5000000
+      },
+      {
+        "film": "http://www.wikidata.org/entity/Q156911",
+        "release_date": "1987-10-29T00:00:00Z",
+        "filmLabel": "Wings of Desire",
+        "image": "http://commons.wikimedia.org/wiki/Special:FilePath/Berlin%20Anhalter%20Bahnhof.jpg",
+        "budget": 5000000
+      },
+      {
+        "film": "http://www.wikidata.org/entity/Q168154",
+        "release_date": "1968-01-01T00:00:00Z",
+        "filmLabel": "Once Upon a Time in the West",
+        "image": "http://commons.wikimedia.org/wiki/Special:FilePath/Spiel%20mir%20das%20Lied%20vom%20Tod%20Logo.png",
+        "budget": 5000000
+      },
+      {
+        "film": "http://www.wikidata.org/entity/Q577306",
+        "release_date": "1978-02-10T00:00:00Z",
+        "filmLabel": "The Gauntlet",
+        "image": "http://commons.wikimedia.org/wiki/Special:FilePath/The%20gauntlet%20de.svg",
+        "budget": 5500000
+      },
+      {
+        "film": "http://www.wikidata.org/entity/Q464032",
+        "release_date": "2019-04-01T00:00:00Z",
+        "filmLabel": "Cinema Paradiso",
+        "image": "http://commons.wikimedia.org/wiki/Special:FilePath/Logo-design-Cinema-Paradiso-1987-by-Elena-Green.jpg",
+        "budget": 5000000
+      },
+      {
+        "film": "http://www.wikidata.org/entity/Q168154",
+        "release_date": "1969-08-27T00:00:00Z",
+        "filmLabel": "Once Upon a Time in the West",
+        "image": "http://commons.wikimedia.org/wiki/Special:FilePath/Spiel%20mir%20das%20Lied%20vom%20Tod%20Logo.png",
+        "budget": 5000000
+      },
+      {
+        "film": "http://www.wikidata.org/entity/Q83767",
+        "release_date": "1980-01-01T00:00:00Z",
+        "filmLabel": "The Blue Lagoon",
+        "image": "http://commons.wikimedia.org/wiki/Special:FilePath/Lgoon.jpg",
+        "budget": 4500000
+      },
+      {
+        "film": "http://www.wikidata.org/entity/Q577306",
+        "release_date": "1977-12-22T00:00:00Z",
+        "filmLabel": "The Gauntlet",
+        "image": "http://commons.wikimedia.org/wiki/Special:FilePath/The%20gauntlet%20de.svg",
+        "budget": 5500000
+      }
+    ]
+  },
+  "mark": "bar",
+  "encoding": {
+    "x": {"field": "filmLabel", "type": "nominal"},
+    "y": {"field": "budget", "type": "quantitative"}
+  },
+  "config": {}
+};
+    vegaEmbed("#vis", spec, {mode: "vega-lite"}).then(console.log).catch(console.warn);
+  </script>
+</body>
+</html>
